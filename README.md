@@ -1,4 +1,4 @@
-
+## Food Delivery App
 A robust and scalable backend application for a food delivery service, built using Spring Boot. The app supports user registration, authentication, and role-based access for managing meal orders and administrative tasks. With integrated CI/CD pipelines and semantic versioning, this project is designed for efficient development and deployment.
 
 ## Key Features
