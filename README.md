@@ -25,3 +25,6 @@ A RESTful API for a food delivery application built with Spring Boot. This app a
 3. mvn clean install
 4. mvn spring-boot:run
 
+## Contribution
+Contributions are welcome! Feel free to fork the repository and submit a pull request.
+
