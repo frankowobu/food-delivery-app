@@ -1,6 +1,4 @@
-<<<<<<< HEAD
-backend app
-=======
+
 A robust and scalable backend application for a food delivery service, built using Spring Boot. The app supports user registration, authentication, and role-based access for managing meal orders and administrative tasks. With integrated CI/CD pipelines and semantic versioning, this project is designed for efficient development and deployment.
 
 ## Key Features
@@ -33,4 +31,3 @@ A robust and scalable backend application for a food delivery service, built usi
 ## Contribution
 Contributions are welcome! Feel free to fork the repository and submit a pull request.
 
->>>>>>> e17f290203afbeefca8ae049804e2b6eaebe8f71
