@@ -1,0 +1,67 @@
+variables:
+  MAVEN_OPTS: "-Dmaven.repo.local=.m2/repository"
+  DOCKER_DRIVER: overlay2
+  IMAGE_NAME: faizegbhene/alebsdeliveryapi
+  SCRIPTS_REPO: https://gitlab.com/OduSamuel/ci-scripts.git
+  DEPLOY_RUNNER: docker_runner_tesla_kube
+
+before_script:
+  - export SCRIPTS_DIR=$(mktemp -d)
+  - git clone -q --depth 1 "$SCRIPTS_REPO" "$SCRIPTS_DIR"
+cache:
+  paths:
+    - .m2/repository
+    - target
+
+
+stages:
+  - package
+  - version
+  - build
+  - deploy-dev
+
+maven-package:
+  image: maven:3-openjdk-17
+  stage: package
+  script:
+    - mvn clean package -DskipTests
+  rules:
+    - exists:
+        - Dockerfile
+
+version:
+  image: python:3.7-stretch
+  stage: version
+  script:
+    - mkdir -p ~/.ssh && chmod 700 ~/.ssh
+    - ssh-keyscan gitlab.com >> ~/.ssh/known_hosts && chmod 644 ~/.ssh/known_hosts
+    - eval $(ssh-agent -s)
+    - ssh-add <(echo "$SSH_PRIVATE_KEY")
+    - pip install semver
+    - $SCRIPTS_DIR/common/gen-semver > version
+  artifacts:
+    paths:
+      - version
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
+
+
+docker-build:
+  image: docker:latest
+  stage: build
+  services:
+    - docker:dind
+  before_script:
+    - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD" 
+
+  script:
+    - export VERSION=$(cat ./version || echo "latest")
+    - docker build --pull -t "$IMAGE_NAME:$VERSION" . || { echo "Docker build failed"; exit 1; }
+    - docker push "$IMAGE_NAME:$VERSION" || { echo "Docker push failed"; exit 1; }
+
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
+      exists:
+        - Dockerfile
+
+

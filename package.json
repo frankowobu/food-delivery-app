@@ -1,0 +1,16 @@
+{
+
+  "name": "your-package-name",
+  "version": "1.0.0",
+  "description": "A brief description of your package",
+  "branches": ["main"],
+  "plugins": [
+    "@semantic-release/commit-analyzer",
+    "@semantic-release/release-notes-generator",
+    {
+      "path": "@semantic-release/maven",
+      "publishCmd": "mvn deploy -DskipTests"
+    },
+    "@semantic-release/git"
+  ]
+}
