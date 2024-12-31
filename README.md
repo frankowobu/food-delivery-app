@@ -1,22 +1,24 @@
+A robust and scalable backend application for a food delivery service, built using Spring Boot. The app supports user registration, authentication, and role-based access for managing meal orders and administrative tasks. With integrated CI/CD pipelines and semantic versioning, this project is designed for efficient development and deployment.
 
-# Food Delivery App
+## Key Features
 
-A RESTful API for a food delivery application built with Spring Boot. This app allows users to order meals, leave feedback, and manage their accounts. Admins can create meals, approve orders, and view feedback.
-
-## Features
-
-- User authentication with JWT tokens
-- Role-based access (User/Admin)
-- CRUD operations for meals and orders
-- CORS configuration for secure API access
-- Custom error handling for better user feedback
-
+- **User Management**: Signup, login, and authentication with JWT.
+- **Meal Management**: CRUD operations for meals by admins.
+- **Order Management**: Users can place orders, and admins can approve them.
+- **Feedback System**: Collect user feedback for quality improvement.
+- **Role-Based Access**: Ensures secure access for users and admins.
+- **CI/CD Pipeline**: 
+  - Automated builds, Docker image creation, and push to Docker Hub on merging to the main branch.
+  - Configured using GitLab CI/CD for streamlined deployment processes.
+- **Semantic Versioning**: 
+  - Automatic version incrementing based on Conventional Commits (`feat`, `fix`, `Breaking Change`).
 ## Tech Stack
 
 - **Backend:** Spring Boot, Java
 - **Database:** MySQL
 - **Security:** Spring Security with JWT
 - **Build Tool:** Maven
+- **CICD:** Gitlab
 
 ## Getting Started
 
