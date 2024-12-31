@@ -29,8 +29,8 @@ A robust and scalable backend application for a food delivery service, built usi
 4. mvn spring-boot:run
 
 ## Endpoints
-OPEN YOUR POSTMAN TO TEST THE API
-git clone https://github.com/frankowobu/food-delivery-postman.git
+OPEN YOUR POSTMAN TO TEST THE API  
+git clone https://github.com/frankowobu/food-delivery-postman.git  
 This contains all the API requests in this project.
 
 ## Contribution
