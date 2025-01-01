@@ -23,15 +23,4 @@ public class UserDto {
    private List<OrderDto> orders;
     private Set<MealDto> favourite;
 
-
-    public UserDto(Users user) {
-          this.id = user.getId();
-          this.firstName = user.getFirstName();
-          this.lastName = user.getLastName();
-          this.email = user.getEmail();
-          this.createdOn = user.getCreatedOn();
-          this.emailVerified = user.isEmailVerified();
-            this.orders = user.getOrders().stream().map(OrderDto::new).collect(Collectors.toList());
-        this.favourite = user.getFavourite().stream().map(MealDto::new).collect(Collectors.toSet());
-    }
 }

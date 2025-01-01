@@ -32,12 +32,4 @@ public class Meal{
     private String mealImage;
 
 
-    public Meal(Meal meal) {
-        this.id = meal.getId();
-        this.mealName = meal.getMealName();
-        this.mealPrice = meal.getMealPrice();
-        this.mealType = meal.getMealType();
-        this.mealDescription = meal.getMealDescription();
-        this.mealImage = meal.getMealImage();
-    }
 }

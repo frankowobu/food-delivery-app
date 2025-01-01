@@ -11,10 +11,5 @@ public class OrderRequestDto {
     private String orderPhone;
     private List<String> mealNames;
 
-    public OrderRequestDto(String orderEmail,  String orderAddress, String orderPhone, List<String> mealNames) {
-        this.orderEmail = orderEmail ;
-        this.orderAddress = orderAddress;
-        this.orderPhone = orderPhone;
-        this.mealNames =  mealNames;
-    }
+
 }

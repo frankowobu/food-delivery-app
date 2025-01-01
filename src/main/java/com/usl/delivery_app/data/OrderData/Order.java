@@ -58,15 +58,7 @@ public class Order {
             inverseJoinColumns = @JoinColumn(name = "meal_id"))
     private List<Meal> meals;
 
-    public Order(Order order) {
-        this.id = order.getId();
-        this.user = order.getUser();
-        this.orderStatus = order.getOrderStatus();
-        this.orderTotal = order.getOrderTotal();
-        this.orderAddress = order.getOrderAddress();
-        this.orderPhone = order.getOrderPhone();
-        this.meals = order.getMeals();
-    }
+
 
 // ...
 

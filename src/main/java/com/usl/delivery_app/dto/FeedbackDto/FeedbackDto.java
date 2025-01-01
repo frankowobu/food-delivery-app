@@ -7,8 +7,8 @@ import lombok.Data;
 @AllArgsConstructor
 public class FeedbackDto {
     private String name;;
-private String email;
-private String message;
+    private String email;
+    private String message;
 
 
 

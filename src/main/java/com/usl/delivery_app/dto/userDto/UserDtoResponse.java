@@ -9,11 +9,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class UserDtoResponse {
-     UserDto user;
+    private UserDto user;
     private String token;
-
-    public UserDtoResponse(Users user, String token) {
-        this.user = new UserDto(user);
-        this.token = token;
-    }
 }

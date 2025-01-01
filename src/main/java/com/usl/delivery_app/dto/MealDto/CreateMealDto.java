@@ -11,11 +11,5 @@ public class CreateMealDto {
     private String mealImage;
 
 
-    public CreateMealDto(String mealName, String mealDescription, String mealType, String mealPrice, String mealImage) {
-        this.mealName = mealName;
-        this.mealDescription = mealDescription;
-        this.mealType = mealType;
-        this.mealPrice = mealPrice;
-        this.mealImage = mealImage;
-    }
+
 }

@@ -21,14 +21,5 @@ public class OrderDto {
     private String trackingNumber;
     private List<MealDto> meals;
 
-    public OrderDto(Order order) {
-        this.id = order.getId();
-        this.orderStatus = order.getOrderStatus();
-        this.orderTotal = order.getOrderTotal();
-        this.orderAddress = order.getOrderAddress();
-        this.orderPhone = order.getOrderPhone();
-        this.createdOn = order.getCreatedOn();
-        this.trackingNumber = order.getTrackingNumber();
-        this.meals = order.getMeals().stream().map(MealDto::new).collect(Collectors.toList());
-    }
+
 }
